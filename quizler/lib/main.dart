@@ -86,6 +86,24 @@ class _QuizpageState extends State<Quizpage> {
             ),
           ),
         ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsetsGeometry.all(15),
+            child: TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.red,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
+              child: Text(
+                'True',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
