@@ -1,105 +1,91 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        body: SafeArea(child: Quizpage()),
+        body: const SafeArea(
+          child: QuizPage(),
+        ),
       ),
     );
   }
 }
 
-class Quizpage extends StatefulWidget {
-  const Quizpage({super.key});
+class QuizPage extends StatefulWidget {
+  const QuizPage({super.key});
 
   @override
-  _QuizpageState createState() {
-    return _QuizpageState();
-  }
+  State<QuizPage> createState() => _QuizPageState();
 }
 
-class _QuizpageState extends State<Quizpage> {
+class _QuizPageState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Expanded(
+        const Expanded(
           flex: 5,
           child: Padding(
-            padding: EdgeInsets.all(5),
+            padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'The questioins',
+                'This is where the question text will go.',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
         ),
-        // Different way to design the buttons
         Expanded(
           child: Padding(
-            padding: EdgeInsetsGeometry.all(15),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
               style: TextButton.styleFrom(
                 backgroundColor: Colors.green,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
               ),
-              onPressed: () {},
-              child: Text(
+              onPressed: () {
+                //The user picked true.
+              },
+              child: const Text(
                 'True',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
-          ),
-        ),
-        // Another way to design the buttons
-        Expanded(
-          child: Padding(
-            padding: EdgeInsetsGeometry.all(15),
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.red,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
                 ),
-              ),
-              child: Text(
-                'True',
-                style: TextStyle(color: Colors.white, fontSize: 20),
               ),
             ),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsetsGeometry.all(15),
+            padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              onPressed: () {},
               style: TextButton.styleFrom(
                 backgroundColor: Colors.red,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
               ),
-              child: Text(
-                'True',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+              onPressed: () {
+                //The user picked false.
+              },
+              child: const Text(
+                'False',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
